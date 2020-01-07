@@ -28,6 +28,6 @@ In the sample evaluation code, the data we use is based on the validation set pr
 To run the sample evaluation code, follow the corresponding steps:
 
 1. Navigate to _sample_evaluation/challenge2-#_ where # is the subchallenge number.
-2. Set the `DOCKER_IMAGE` variable in _sample_evaluation/challenge2-#/evaluate_submissions.sh_ to the name of your Docker image submission in Dockerhub.
+2. Set the `DOCKER_IMAGE` variable in _sample_evaluation/challenge2-#/evaluate_challenge2-#.sh_ to the name of your Docker image submission in Dockerhub.
 3. Run _sample_evaluation/challenge2-#/evaluation_submissions.sh_. The outputs will be placed in _sample_evaluation/challenge2-#/output_. 
 
