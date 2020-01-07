@@ -21,6 +21,6 @@ docker run --rm -i -t \
     --name ug2_challenge2-1_evaluationB \
     -v $(pwd)/outputs/:/root/images \
     tanjasper/ug2_2020_samples:evaluation
-    /bin/bash python ./evaluation_code/evaluate_verification.py --subchallenge 1
+    /bin/bash python ./evaluate_verification.py --subchallenge 1
 
 echo Evaluation complete
