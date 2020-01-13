@@ -1,3 +1,9 @@
+OUTPUT_DIR=/root/challenge2-1_test_output
+
+if [ -d $OUTPUT_DIR/submission1 ]; then rm -rf $OUTPUT_DIR/submission1; fi
+if [ -d $OUTPUT_DIR/submission2 ]; then rm -rf $OUTPUT_DIR/submission2; fi
+if [ -d $OUTPUT_DIR/submission3 ]; then rm -rf $OUTPUT_DIR/submission3; fi
+
 if test -f "/root/ug2_challenge2-1_submission1.sh"; then
 	mkdir /root/challenge2-1_test_output/submission1
 	chmod +x /root/ug2_challenge2-1_submission1.sh

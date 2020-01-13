@@ -23,11 +23,16 @@ We also provide sample evaluation code, found in _sample_evaluation_ based on th
 
 For subchallenges 1 and 2, we will run off-the-shelf face verification algorithms on your provided images. For the sample evaluation code, we simply use a dummy face verification algorithm.
 
-In the sample evaluation code, the data we use is based on the validation set provided with the FlatCam Face Dataset (based on subjects 61-87). You may use this data to validate your methods. The actual test data consists of images of subjects not included in the FCFD (but captured in the same manner).
+The sample evaluation data is a subset of the validation set provided with the FlatCam Face Dataset (based on subjects 61-87). You may use this data to validate your methods. The actual test data consists of images of subjects not included in the FCFD (but captured in the same manner).
 
 To run the sample evaluation code, follow the corresponding steps:
 
-1. Navigate to _sample_evaluation/challenge2-#_ where # is the subchallenge number.
-2. Set the `DOCKER_IMAGE` variable in _sample_evaluation/challenge2-#/evaluate_challenge2-#.sh_ to the name of your Docker image submission in Dockerhub.
-3. Run _sample_evaluation/challenge2-#/evaluation_submissions.sh_. The outputs will be placed in _sample_evaluation/challenge2-#/output_. 
+1. Choose __one__ of the following two ways to download sample test data
+   1. Install gdown (`pip install gdown` in Terminal), and then navigate to `sample_evaluation` and run `./download_evaluation_data.sh` in Terminal.
+   2. Manually download and unzip the following two directories from Google Drive and place them in `sample_evaluation`:
+      - https://drive.google.com/open?id=15nzEP_K16TwTTz6xqWTgSVsX9qB_QDA4
+      - https://drive.google.com/open?id=1Hu567rjzbeUgjqiYaxpwwrb_iRDj_w0Q
+2. Navigate to _sample_evaluation/challenge2-#_ where # is the subchallenge number.
+3. Set the `DOCKER_IMAGE` variable in _sample_evaluation/challenge2-#/evaluate_challenge2-#.sh_ to the name of your Docker image submission in Dockerhub.
+4. Run _sample_evaluation/challenge2-#/evaluation_submissions.sh_. The outputs will be placed in _sample_evaluation/challenge2-#/output_. 
 
