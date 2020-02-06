@@ -23,6 +23,6 @@ docker run --rm -i -t \
 		-v $(pwd)/test_gt.txt/:/root/test_gt.txt \
 		-v $(pwd)/test_pairs.txt/:/root/test_pairs.txt \
     tanjasper/ug2_2020_samples:evaluation \
-    python evaluate_verification.py --subchallenge 1
+    python evaluate_verification.py --subchallenge 2
 
 echo Evaluation complete

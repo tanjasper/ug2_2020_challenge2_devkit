@@ -5,11 +5,11 @@ from skimage.io import imread
 from skimage.transform import resize
 
 parser = argparse.ArgumentParser()
-parser.add_argument('--submissions_dir', help='where images are stored', default='/root/images')
+parser.add_argument('--submissions_dir', help='where images or predictions are stored', default='/root/images')
 parser.add_argument('--subchallenge', type=int)
 parser.add_argument('--pairs_txt', help='where pairs txt is located', default='test_pairs.txt')
 parser.add_argument('--gt_txt', help='where gt text is file is located', default='test_gt.txt')
-parser.add_argument('--preds_txt', help='location of predictions for subchallenge 3', default='')
+parser.add_argument('--preds_txt', help='location of predictions for subchallenge 3', default='submission.txt')
 opt = parser.parse_args()
 
 
@@ -40,9 +40,10 @@ def dummy_verification(im1, im2):
 if __name__ == '__main__':
     
     # Read in pairs and ground truth
-    with open(opt.pairs_txt) as f:
-        pairs = f.readlines()
-    pairs = [line.strip() for line in pairs]
+    if opt.subchallenge in [1, 2]:
+        with open(opt.pairs_txt) as f:
+            pairs = f.readlines()
+        pairs = [line.strip() for line in pairs]
     with open(opt.gt_txt) as f:
         gt = f.readlines()
     gt = [int(line.strip()) for line in gt]
@@ -67,16 +68,15 @@ if __name__ == '__main__':
 
             # For subchallenge 3, just read in provided predictions
             if opt.subchallenge == 3:
-                with open(opt.preds_txt) as f:
+                with open(os.path.join(image_dir, opt.preds_txt)) as f:
                     preds = f.readlines()
-                preds = [int(line.strip()) for line in gt]
+                preds = [int(line.strip()) for line in preds]
             
             # Check predictions
             if any(pred not in [0, 1] for pred in preds):
                 raise Exception('Encountered a prediction that is neither 0 nor 1')
             if len(preds) != len(gt):
                 raise Exception('Number of predictions {} do not match number of test pairs {}'.format(len(preds), len(gt)))
-            
 
             # Report accuracy rate
             correct_preds = 0.
