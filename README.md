@@ -33,6 +33,6 @@ To run the sample evaluation code, follow the corresponding steps:
       - https://drive.google.com/open?id=15nzEP_K16TwTTz6xqWTgSVsX9qB_QDA4
       - https://drive.google.com/open?id=1Hu567rjzbeUgjqiYaxpwwrb_iRDj_w0Q
 2. Navigate to _sample_evaluation/challenge2-#_ where # is the subchallenge number.
-3. Set the `DOCKER_IMAGE` variable in _sample_evaluation/challenge2-#/evaluate_challenge2-#.sh_ to the name of your Docker image submission in Dockerhub.
-4. Run _sample_evaluation/challenge2-#/evaluation_submissions.sh_. The outputs will be placed in _sample_evaluation/challenge2-#/outputs_. Check that *verification_scores.txt* was saved in the outputs folder to see if the evaluation successfully ran all the way through.
+3. Set the `DOCKER_IMAGE` variable in _evaluate_challenge2-#.sh_ to the name of your Docker image submission in Dockerhub.
+4. Run _evaluate_challenge2-#.sh_. The outputs will be placed in _sample_evaluation/challenge2-#/outputs_. Check that *verification_scores.txt* was saved in the outputs folder to see if the evaluation successfully ran all the way through.
 
