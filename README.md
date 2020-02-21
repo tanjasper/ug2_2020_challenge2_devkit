@@ -38,6 +38,6 @@ https://ieeexplore.ieee.org/document/7517296 (or pre-print available here: https
 
 We now describe in a high-level the reconstruction pipeline performed in the code. The following image represents the pipeline:
 
-![FlatCam pipeline](https://github.com/tanjasper/ug2_2020_challenge2_devkit/figs/pipeline.png)
+![FlatCam pipeline](https://github.com/tanjasper/ug2_2020_challenge2_devkit/blob/master/figs/pipeline.png)
 
 The FlatCam sensor is in a Bayer-filtered format. That is, pixels measure only one of the 3 RGB colors, and they are grouped into four pixels: 1 blue, 2 green, and 1 red. The FlatCam model is that the measurement for each of those four channels is a separable linear function of the corresponding color channel of the scene. In particular, the model is $P_{1c} X Q_{1c}^T$, where $P_{1c}$ and $Q_{1c}$ ($\Phi_L$ and $\Phi_R$ in the paper) are matrices obtained via calibration and $c$ represents the color channel. These matrices are saved in flatcam_calibdata.mat. Tikhonov reconstruction (Eq. 7 in Asif, et al 2017) is then performed on each of the color channels, and the reconstruction of each color channel is merged to form the RGB image.
