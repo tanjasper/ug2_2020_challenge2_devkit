@@ -26,7 +26,8 @@ To run the sample evaluation code, follow the corresponding steps:
       - https://drive.google.com/open?id=1Hu567rjzbeUgjqiYaxpwwrb_iRDj_w0Q
 2. Navigate to _sample_evaluation/challenge2-#_ where # is the subchallenge number.
 3. Set the `DOCKER_IMAGE` variable in _evaluate_challenge2-#.sh_ to the name of your Docker image submission in Dockerhub.
-4. Run _evaluate_challenge2-#.sh_. The outputs will be placed in _sample_evaluation/challenge2-#/outputs_. Check that *verification_scores.txt* was saved in the outputs folder to see if the evaluation successfully ran all the way through.
+4. If you would like to use a GPU for your submission, either replace the first `docker run` in _evaluate_challenge2-#.sh_ with `nvidia-docker run` or add the `--gpus` flag according to your Docker and nvidia-docker versions. 
+5. Run _evaluate_challenge2-#.sh_. The outputs will be placed in _sample_evaluation/challenge2-#/outputs_. Check that *verification_scores.txt* was saved in the outputs folder to see if the evaluation successfully ran all the way through.
 
 ### Tikhonov Reconstruction Code
 
